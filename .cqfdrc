@@ -12,6 +12,9 @@ tar_transform='yes'
 flavors='
     all
     flasher
+    guest_arm64
+    guest_arm64_dbg
+    guest_arm64_test
     guest_efi
     guest_efi_test
     guest_efi_dbg
@@ -69,6 +72,15 @@ command='./build.sh -v \
     -i seapath-flasher \
     --distro seapath-flash \
     --machine seapath-installer'
+
+[guest_arm64]
+command='./build.sh -v -i seapath-guest-efi-image --distro seapath-guest --machine seapath-vm-arm64'
+
+[guest_arm64_test]
+command='./build.sh -v -i seapath-guest-efi-test-image --distro seapath-guest --machine seapath-vm-arm64'
+
+[guest_arm64_dbg]
+command='./build.sh -v -i seapath-guest-efi-dbg-image --distro seapath-guest --machine seapath-vm-arm64'
 
 [guest_efi]
 command='./build.sh -v -i seapath-guest-efi-image --distro seapath-guest --machine seapath-vm'
@@ -150,4 +162,3 @@ command=' \
 
 [release]
 command='./tools/make_release.sh --full-build'
-
