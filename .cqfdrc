@@ -130,6 +130,12 @@ command='./build.sh -v -i seapath-host-efi-dbg-swu-image --distro seapath-standa
 [host_standalone_efi_test_swu]
 command='./build.sh -v -i seapath-host-efi-test-swu-image --distro seapath-standalone-host'
 
+[host_standalone_qcom]
+command='./build.sh -v -i seapath-host-efi-image -m seapath-hypervisor-iq-9075-evk --distro seapath-host-qcom'
+
+[host_standalone_qcom_dbg]
+command='./build.sh -v -i seapath-host-efi-dbg-image -m seapath-hypervisor-iq-9075-evk --distro seapath-host-qcom'
+
 [observer_efi]
 command='./build.sh -v \
     -i seapath-observer-efi-image \
